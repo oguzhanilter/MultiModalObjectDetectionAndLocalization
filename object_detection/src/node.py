@@ -16,8 +16,6 @@ from object_detection.pointprojector    import PointProjector
 from object_detection.objectlocalizer   import ObjectLocalizer
 from object_detection.utils             import pointcloud2_to_xyzi, check_validity_image_info, filter_ground
 
-
-
 import warnings
 warnings.filterwarnings("ignore")
 

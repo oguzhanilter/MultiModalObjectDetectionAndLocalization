@@ -222,7 +222,8 @@ class ObjectLocalizer:
         
         else:          
             distances = np.squeeze(in_BB_3D[indices, AXIS_Z])
-            in_range_indices = np.nonzero( ( np.abs(distances - estimated_dist) - min( np.abs(distances - estimated_dist) ) ) < self.obj_conf[obj_class]["max_depth"] )[0]
+            in_range_indices = np.nonzero( ( np.abs(distances - estimated_dist) - min( np.abs(distances - estimated_dist) ) ) \
+                                            < self.obj_conf[obj_class]["max_depth"] )[0]
             # in_range_indices = np.nonzero( np.abs( min(distances) - distances ) < self.obj_conf[obj_class]["max_depth"] / 2.0 )[0]
 
             indices = indices[in_range_indices]   
@@ -331,7 +332,7 @@ class ObjectLocalizer:
             center_point = in_BB_3D[center_ind]
             center_point[[AXIS_X, AXIS_Y]] = center_point[[AXIS_X, AXIS_Y]] * (pos[AXIS_Z] / center_point[AXIS_Z])
             pos[[AXIS_X, AXIS_Y]] = center_point[[AXIS_X, AXIS_Y]]
-            
+
             new_obj.pt_indices      = np.array([in_BB_indices[on_object]]) if isinstance(on_object, np.int64) else in_BB_indices[on_object]
             new_obj.pos             = pos
             new_obj.estimation_type = "measurement"
