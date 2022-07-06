@@ -1,6 +1,8 @@
 # Multimodal Object Detection and Mapping
 
-Detection and mapping of objects with camera and lidar.
+This package enables detection and localization of objects using camera and lidar inputs. Object detections in 2D images are mapped to lidar scans to retreive the 3D object postions to scale.
+
+The package is integrated to [ETH RobotX Code Repo](https://github.com/ETHZ-RobotX/smb_object_detection). 
 
 The main branch contains the necessary packages to run the pipeline with the packages of SMB. The branch `stand_alone` can run rosbags and visualize them without needing any additional package.
 
